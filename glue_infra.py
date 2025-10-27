@@ -171,63 +171,63 @@ if __name__ == "__main__":
 
 
 """This code works fine just merging it with glue_role.py"""
-# import boto3
-# from botocore.exceptions import ClientError
+import boto3
+from botocore.exceptions import ClientError
 
 # # ========== CONFIGURATION ==========
-# region = "us-east-1"
-# glue_client = boto3.client("glue", region_name=region)
+region = "us-east-1"
+glue_client = boto3.client("glue", region_name=region)
 
-# database_name = "retail_lakehouse_db"
-# iam_role = "AWSGlueServiceRole"  # 🔁 Replace with your actual Glue IAM role name
-# raw_bucket = "apex-retail-raw-zone"
+database_name = "retail_lakehouse_db"
+iam_role = "AWSGlueServiceRole"  # 🔁 Replace with your actual Glue IAM role name
+raw_bucket = "apex-retail-raw-zone"
 
 # # Define crawler sources
-# datasets = {
-#     "orders_crawler": f"s3://{raw_bucket}/transactional/orders/",
-#     "order_items_crawler": f"s3://{raw_bucket}/transactional/order_items/",
-#     "products_crawler": f"s3://{raw_bucket}/product/",
-# }
+datasets = {
+     "orders_crawler": f"s3://{raw_bucket}/transactional/orders/",
+     "order_items_crawler": f"s3://{raw_bucket}/transactional/order_items/",
+     "products_crawler": f"s3://{raw_bucket}/product/",
+ }
 
-# # ========== STEP 1: CREATE DATABASE ==========
-# try:
-#     glue_client.create_database(DatabaseInput={"Name": database_name})
-#     print(f"✅ Glue Database created: {database_name}")
-# except ClientError as e:
-#     if e.response["Error"]["Code"] == "AlreadyExistsException":
-#         print(f"ℹ️ Database already exists: {database_name}")
-#     else:
-#         print(f"❌ Error creating database: {e}")
+ # ========== STEP 1: CREATE DATABASE ==========
+ try:
+     glue_client.create_database(DatabaseInput={"Name": database_name})
+     print(f"✅ Glue Database created: {database_name}")
+ except ClientError as e:
+     if e.response["Error"]["Code"] == "AlreadyExistsException":
+         print(f"ℹ️ Database already exists: {database_name}")
+     else:
+         print(f"❌ Error creating database: {e}")
 
-# # ========== STEP 2: CREATE CRAWLERS ==========
-# for crawler_name, s3_path in datasets.items():
-#     try:
-#         glue_client.create_crawler(
-#             Name=crawler_name,
-#             Role=iam_role,
-#             DatabaseName=database_name,
-#             Description=f"Crawler for {crawler_name.replace('_', ' ')}",
-#             Targets={"S3Targets": [{"Path": s3_path}]},
-#             # Schedule=None,  # Optional: set cron expression if you want auto-scheduling
-#             SchemaChangePolicy={
-#                 "UpdateBehavior": "UPDATE_IN_DATABASE",
-#                 "DeleteBehavior": "DEPRECATE_IN_DATABASE",
-#             },
-#             TablePrefix=crawler_name.split("_")[0] + "_",
-#         )
-#         print(f"✅ Created crawler: {crawler_name}")
-#     except ClientError as e:
-#         if e.response["Error"]["Code"] == "AlreadyExistsException":
-#             print(f"ℹ️ Crawler already exists: {crawler_name}")
-#         else:
-#             print(f"❌ Error creating crawler {crawler_name}: {e}")
+ # ========== STEP 2: CREATE CRAWLERS ==========
+     for crawler_name, s3_path in datasets.items():
+     try:
+         glue_client.create_crawler(
+            Name=crawler_name,
+             Role=iam_role,
+             DatabaseName=database_name,
+             Description=f"Crawler for {crawler_name.replace('_', ' ')}",
+             Targets={"S3Targets": [{"Path": s3_path}]},
+             # Schedule=None,  # Optional: set cron expression if you want auto-scheduling
+             SchemaChangePolicy={
+                 "UpdateBehavior": "UPDATE_IN_DATABASE",
+                 "DeleteBehavior": "DEPRECATE_IN_DATABASE",
+             },
+             TablePrefix=crawler_name.split("_")[0] + "_",
+         )
+         print(f"✅ Created crawler: {crawler_name}")
+     except ClientError as e:
+         if e.response["Error"]["Code"] == "AlreadyExistsException":
+             print(f"ℹ️ Crawler already exists: {crawler_name}")
+         else:
+             print(f"❌ Error creating crawler {crawler_name}: {e}")
 
-# # ========== STEP 3: RUN ALL CRAWLERS ==========
-# for crawler_name in datasets.keys():
-#     try:
-#         glue_client.start_crawler(Name=crawler_name)
-#         print(f"🚀 Started crawler: {crawler_name}")
-#     except ClientError as e:
-#         print(f"❌ Could not start crawler {crawler_name}: {e}")
+ # ========== STEP 3: RUN ALL CRAWLERS ==========
+     for crawler_name in datasets.keys():
+         try:
+             glue_client.start_crawler(Name=crawler_name)
+             print(f"🚀 Started crawler: {crawler_name}")
+         except ClientError as e:
+             print(f"❌ Could not start crawler {crawler_name}: {e}")
 
-# print("\n🎉 All crawlers created and triggered successfully!")
+ print("\n🎉 All crawlers created and triggered successfully!")
