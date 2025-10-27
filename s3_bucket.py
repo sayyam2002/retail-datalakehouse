@@ -13,7 +13,7 @@ bucket_list = [
 ]
 
 # Local dataset folder (update this path as per your system)
-local_raw_path = r"./datasets"   # ✅ your dataset folder in project directory
+local_raw_path = r"./datasets"   #  your dataset folder in project directory
 raw_bucket = bucket_list[0]     # apex-retail-raw-zone
 
 # ===== INITIALIZE CLIENT =====
@@ -29,16 +29,16 @@ for bucket in bucket_list:
                 Bucket=bucket,
                 CreateBucketConfiguration={'LocationConstraint': region}
             )
-        print(f"✅ Bucket created: {bucket}")
+        print(f" Bucket created: {bucket}")
     except ClientError as e:
         if e.response['Error']['Code'] == 'BucketAlreadyOwnedByYou':
             print(f"ℹ Bucket already exists and owned by you: {bucket}")
         else:
-            print(f"❌ Error creating bucket {bucket}: {e}")
+            print(f" Error creating bucket {bucket}: {e}")
 
 # ===== UPLOAD FILES TO RAW BUCKET =====
 if not os.path.exists(local_raw_path):
-    print(f"❌ Dataset path not found: {local_raw_path}")
+    print(f" Dataset path not found: {local_raw_path}")
 else:
     for file_name in os.listdir(local_raw_path):
         if not file_name.endswith(".csv"):
@@ -65,8 +65,8 @@ else:
 
         try:
             s3_client.upload_file(file_path, raw_bucket, s3_key)
-            print(f"✅ Uploaded: {file_name} → s3://{raw_bucket}/{s3_key}")
+            print(f" Uploaded: {file_name} → s3://{raw_bucket}/{s3_key}")
         except Exception as e:
-            print(f"❌ Failed to upload {file_name}: {e}")
+            print(f" Failed to upload {file_name}: {e}")
 
 print("\n🎉 All raw datasets uploaded successfully to S3!")
