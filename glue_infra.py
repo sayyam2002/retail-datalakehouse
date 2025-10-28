@@ -168,8 +168,6 @@ if __name__ == "__main__":
 
 
 
-
-
 """This code works fine just merging it with glue_role.py"""
 # import boto3
 # from botocore.exceptions import ClientError

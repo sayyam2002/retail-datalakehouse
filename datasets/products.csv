@@ -1,4 +1,4 @@
-product_id,department_id,department,product_name
+product_id,department_id,shelf_id,department,product_name
 4,83,4,produce,fresh vegetables
 6,120,16,dairy eggs,yogurt
 17,21,16,dairy eggs,packaged cheese
@@ -133,3 +133,119 @@ product_id,department_id,department,product_name
 30257,55,11,personal care,shave needs
 32130,109,11,personal care,skin care
 37777,102,18,babies,baby bath body care
+31,135,4,produce,Organic Kale
+85,136,16,dairy eggs,Cage-Free Brown Eggs
+53,137,3,bakery,Sourdough Baguette
+133,138,13,pantry,Organic Black Beans
+78,139,6,international,Spicy Curry Paste
+108,140,12,meat seafood,Grass-Fed Ground Beef
+34,141,9,dry goods pasta,Linguine Pasta
+115,142,1,frozen,Supreme Thin Crust Pizza
+101,143,15,canned goods,Diced Peaches in Juice
+81,144,7,beverages,Sparkling Water Lime
+28,145,15,canned goods,Cream of Mushroom Soup
+76,146,7,beverages,Cold Brew Coffee Concentrate
+26,147,19,snacks,Sea Salt Potato Chips
+27,148,14,breakfast,Oatmeal Instant Variety Pack
+44,149,20,deli,Rotisserie Chicken Half
+103,150,11,personal care,Moisturizing Hand Soap
+12,151,17,household,Paper Towels Mega Roll
+91,152,8,pets,Adult Dog Food Chicken
+128,153,18,babies,Stage 2 Baby Food Banana
+22,154,5,alcohol,Craft IPA Six Pack
+122,155,2,other,Generic Item 1
+111,156,10,bulk,Bulk Almonds Raw
+47,157,4,produce,Sweet Mini Peppers
+132,158,16,dairy eggs,Artisan Goat Cheese
+1,159,3,bakery,Gluten-Free Brownies
+52,160,13,pantry,Extra Virgin Olive Oil
+13,161,6,international,Frozen Spring Rolls
+86,162,12,meat seafood,Atlantic Salmon Fillets
+16,163,9,dry goods pasta,Organic Tomato Sauce
+3,164,1,frozen,Frozen Mixed Berries
+20,165,15,canned goods,Black Olives Sliced
+40,166,7,beverages,Organic Orange Juice
+94,167,19,snacks,Peanut Butter Filled Pretzels
+57,168,14,breakfast,Blueberry Pancake Mix
+120,169,20,deli,Hummus Classic
+96,170,11,personal care,Sensitive Skin Lotion
+48,171,5,alcohol,California Cabernet Sauvignon
+5,172,2,other,Generic Item 2
+19,173,10,bulk,Bulk Oats Rolled
+92,174,4,produce,Avocado Toast Topping Mix
+64,175,4,produce,Baby Spinach Clamshell
+117,176,16,dairy eggs,Greek Vanilla Yogurt
+43,177,3,bakery,Whole Wheat Pita Bread
+15,178,13,pantry,Smoked Paprika
+112,179,6,international,Jasmine Rice 5lb
+37,180,12,meat seafood,Chicken Breast Tenders
+61,181,9,dry goods pasta,Quinoa Grain
+127,182,17,household,Heavy Duty Trash Bags
+107,183,8,pets,Clumping Cat Litter
+9,184,18,babies,Overnight Diapers Size 4
+72,185,5,alcohol,Dry White Wine
+35,186,2,other,Generic Item 3
+59,187,10,bulk,Bulk Dried Apricots
+55,188,4,produce,Heirloom Tomatoes
+8,189,16,dairy eggs,Unsalted European Butter
+100,190,3,bakery,Cinnamon Raisin Bagels
+23,191,13,pantry,Dijon Mustard
+39,192,6,international,Taco Seasoning Mix
+7,193,12,meat seafood,Italian Sausage Links
+130,194,9,dry goods pasta,Instant Ramen Noodles
+84,195,1,frozen,Vegan Black Bean Burgers
+87,196,15,canned goods,Tuna in Water
+51,197,7,beverages,Electrolyte Sports Drink
+69,198,19,snacks,Dark Chocolate Bar
+129,199,14,breakfast,Honey Nut Cereal
+97,200,20,deli,Smoked Turkey Breast Slices
+63,201,11,personal care,Anti-Plaque Toothpaste
+77,202,17,household,Aluminum Foil
+10,203,8,pets,Dental Chews for Dogs
+50,204,18,babies,Scented Baby Wipes
+45,205,15,canned goods,Chili Beans
+38,206,7,beverages,Green Tea Bags
+82,207,19,snacks,Dried Mango Slices
+80,208,14,breakfast,Whole Grain Granola
+25,209,20,deli,Potato Salad Family Size
+73,210,11,personal care,Shampoo for Color Treated Hair
+113,211,17,household,Liquid Dish Soap
+24,212,8,pets,Wet Cat Food Tuna
+121,213,18,babies,Gentle Baby Wash
+62,214,5,alcohol,Vodka Triple Distilled
+125,215,2,other,Generic Item 4
+95,216,10,bulk,Bulk Lentils Red
+29,217,4,produce,Organic Kale
+21,218,13,pantry,Maple Syrup Grade A
+98,219,6,international,Wasabi Paste
+60,220,12,meat seafood,Pork Chops
+90,221,9,dry goods pasta,Pesto Sauce
+75,222,1,frozen,Frozen Waffles
+109,223,15,canned goods,Diced Peaches in Juice
+105,224,7,beverages,Sparkling Water Lime
+58,225,19,snacks,Protein Bar Peanut Butter
+11,226,14,breakfast,Toaster Pastries Strawberry
+33,227,20,deli,Vegetable Spring Rolls
+83,228,11,personal care,Aspirin Tablets
+110,229,17,household,Paper Towels Mega Roll
+106,230,8,pets,Flea & Tick Treatment
+68,231,18,babies,Infant Formula Powder
+71,232,5,alcohol,Sparkling Wine
+116,233,2,other,Generic Item 5
+14,234,10,bulk,Bulk Whole Wheat Flour
+123,235,4,produce,Sweet Mini Peppers
+42,236,16,dairy eggs,Cage-Free Brown Eggs
+79,237,3,bakery,Sourdough Baguette
+2,238,13,pantry,Extra Virgin Olive Oil
+131,239,6,international,Frozen Spring Rolls
+124,240,12,meat seafood,Atlantic Salmon Fillets
+99,241,9,dry goods pasta,Organic Tomato Sauce
+30,242,1,frozen,Frozen Mixed Berries
+66,243,15,canned goods,Black Olives Sliced
+67,244,7,beverages,Organic Orange Juice
+46,245,15,canned goods,Diced Peaches in Juice
+18,246,7,beverages,Sparkling Water Lime
+74,247,14,breakfast,Oatmeal Instant Variety Pack
+104,248,20,deli,Rotisserie Chicken Half
+36,249,11,personal care,Moisturizing Hand Soap
+89,250,18,babies,Stage 2 Baby Food Banana
